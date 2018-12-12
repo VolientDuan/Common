@@ -15,6 +15,16 @@
 		5A5EAB8E21C0A9D50010DE1E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A5EAB8D21C0A9D50010DE1E /* main.m */; };
 		5A5EAB9821C0A9D50010DE1E /* CommonTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A5EAB9721C0A9D50010DE1E /* CommonTests.m */; };
 		5A5EABA321C0A9D50010DE1E /* CommonUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A5EABA221C0A9D50010DE1E /* CommonUITests.m */; };
+		5A5EABB421C0ABC50010DE1E /* UIView+VDCommon.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A5EABB321C0ABC50010DE1E /* UIView+VDCommon.m */; };
+		5A5EABB821C0AF5C0010DE1E /* UIImage+VDCommon.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A5EABB721C0AF5C0010DE1E /* UIImage+VDCommon.m */; };
+		5A5EABBC21C0BAC70010DE1E /* NSString+VDCommon.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A5EABBB21C0BAC70010DE1E /* NSString+VDCommon.m */; };
+		5A5EABBF21C0D4BD0010DE1E /* NSMutableAttributedString+VDCommon.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A5EABBE21C0D4BD0010DE1E /* NSMutableAttributedString+VDCommon.m */; };
+		5A5EABC521C0D9370010DE1E /* UIColor+VDHexColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A5EABC421C0D9370010DE1E /* UIColor+VDHexColor.m */; };
+		5A5EABCB21C0DE4F0010DE1E /* UIColor+VDCommon.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A5EABCA21C0DE4F0010DE1E /* UIColor+VDCommon.m */; };
+		5A5EABCF21C0E1EC0010DE1E /* VDQRCodeTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A5EABCE21C0E1EC0010DE1E /* VDQRCodeTool.m */; };
+		5A5EABD221C0E44A0010DE1E /* VDFileTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A5EABD121C0E44A0010DE1E /* VDFileTool.m */; };
+		5A5EABD521C0E5D00010DE1E /* NSDateFormatTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A5EABD421C0E5D00010DE1E /* NSDateFormatTool.m */; };
+		5A5EABD821C0EC510010DE1E /* VDJumpTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A5EABD721C0EC510010DE1E /* VDJumpTool.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +61,29 @@
 		5A5EAB9E21C0A9D50010DE1E /* CommonUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CommonUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A5EABA221C0A9D50010DE1E /* CommonUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CommonUITests.m; sourceTree = "<group>"; };
 		5A5EABA421C0A9D50010DE1E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5A5EABB221C0ABC50010DE1E /* UIView+VDCommon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+VDCommon.h"; sourceTree = "<group>"; };
+		5A5EABB321C0ABC50010DE1E /* UIView+VDCommon.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+VDCommon.m"; sourceTree = "<group>"; };
+		5A5EABB621C0AF5C0010DE1E /* UIImage+VDCommon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+VDCommon.h"; sourceTree = "<group>"; };
+		5A5EABB721C0AF5C0010DE1E /* UIImage+VDCommon.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+VDCommon.m"; sourceTree = "<group>"; };
+		5A5EABBA21C0BAC70010DE1E /* NSString+VDCommon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+VDCommon.h"; sourceTree = "<group>"; };
+		5A5EABBB21C0BAC70010DE1E /* NSString+VDCommon.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+VDCommon.m"; sourceTree = "<group>"; };
+		5A5EABBD21C0D4BD0010DE1E /* NSMutableAttributedString+VDCommon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSMutableAttributedString+VDCommon.h"; sourceTree = "<group>"; };
+		5A5EABBE21C0D4BD0010DE1E /* NSMutableAttributedString+VDCommon.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSMutableAttributedString+VDCommon.m"; sourceTree = "<group>"; };
+		5A5EABC021C0D6470010DE1E /* VDCommon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VDCommon.h; sourceTree = "<group>"; };
+		5A5EABC321C0D9370010DE1E /* UIColor+VDHexColor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIColor+VDHexColor.h"; sourceTree = "<group>"; };
+		5A5EABC421C0D9370010DE1E /* UIColor+VDHexColor.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIColor+VDHexColor.m"; sourceTree = "<group>"; };
+		5A5EABC621C0DBE40010DE1E /* VDCategory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VDCategory.h; sourceTree = "<group>"; };
+		5A5EABC921C0DE4F0010DE1E /* UIColor+VDCommon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIColor+VDCommon.h"; sourceTree = "<group>"; };
+		5A5EABCA21C0DE4F0010DE1E /* UIColor+VDCommon.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIColor+VDCommon.m"; sourceTree = "<group>"; };
+		5A5EABCD21C0E1EC0010DE1E /* VDQRCodeTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VDQRCodeTool.h; sourceTree = "<group>"; };
+		5A5EABCE21C0E1EC0010DE1E /* VDQRCodeTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VDQRCodeTool.m; sourceTree = "<group>"; };
+		5A5EABD021C0E44A0010DE1E /* VDFileTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VDFileTool.h; sourceTree = "<group>"; };
+		5A5EABD121C0E44A0010DE1E /* VDFileTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VDFileTool.m; sourceTree = "<group>"; };
+		5A5EABD321C0E5D00010DE1E /* NSDateFormatTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NSDateFormatTool.h; sourceTree = "<group>"; };
+		5A5EABD421C0E5D00010DE1E /* NSDateFormatTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NSDateFormatTool.m; sourceTree = "<group>"; };
+		5A5EABD621C0EC510010DE1E /* VDJumpTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VDJumpTool.h; sourceTree = "<group>"; };
+		5A5EABD721C0EC510010DE1E /* VDJumpTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VDJumpTool.m; sourceTree = "<group>"; };
+		5A5EABD921C0EDDE0010DE1E /* VDTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VDTool.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +134,7 @@
 		5A5EAB7D21C0A9D40010DE1E /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				5A5EABC721C0DC8E0010DE1E /* VDCommon */,
 				5A5EAB7E21C0A9D40010DE1E /* AppDelegate.h */,
 				5A5EAB7F21C0A9D40010DE1E /* AppDelegate.m */,
 				5A5EAB8121C0A9D40010DE1E /* ViewController.h */,
@@ -130,6 +164,84 @@
 				5A5EABA421C0A9D50010DE1E /* Info.plist */,
 			);
 			path = CommonUITests;
+			sourceTree = "<group>";
+		};
+		5A5EABB021C0AB3B0010DE1E /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				5A5EABC621C0DBE40010DE1E /* VDCategory.h */,
+				5A5EABC221C0D8DE0010DE1E /* Color */,
+				5A5EABB921C0BAA30010DE1E /* NSString */,
+				5A5EABB521C0AF310010DE1E /* UIImage */,
+				5A5EABB121C0AB4B0010DE1E /* UIView */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		5A5EABB121C0AB4B0010DE1E /* UIView */ = {
+			isa = PBXGroup;
+			children = (
+				5A5EABB221C0ABC50010DE1E /* UIView+VDCommon.h */,
+				5A5EABB321C0ABC50010DE1E /* UIView+VDCommon.m */,
+			);
+			path = UIView;
+			sourceTree = "<group>";
+		};
+		5A5EABB521C0AF310010DE1E /* UIImage */ = {
+			isa = PBXGroup;
+			children = (
+				5A5EABB621C0AF5C0010DE1E /* UIImage+VDCommon.h */,
+				5A5EABB721C0AF5C0010DE1E /* UIImage+VDCommon.m */,
+			);
+			path = UIImage;
+			sourceTree = "<group>";
+		};
+		5A5EABB921C0BAA30010DE1E /* NSString */ = {
+			isa = PBXGroup;
+			children = (
+				5A5EABBA21C0BAC70010DE1E /* NSString+VDCommon.h */,
+				5A5EABBB21C0BAC70010DE1E /* NSString+VDCommon.m */,
+				5A5EABBD21C0D4BD0010DE1E /* NSMutableAttributedString+VDCommon.h */,
+				5A5EABBE21C0D4BD0010DE1E /* NSMutableAttributedString+VDCommon.m */,
+			);
+			path = NSString;
+			sourceTree = "<group>";
+		};
+		5A5EABC221C0D8DE0010DE1E /* Color */ = {
+			isa = PBXGroup;
+			children = (
+				5A5EABC321C0D9370010DE1E /* UIColor+VDHexColor.h */,
+				5A5EABC421C0D9370010DE1E /* UIColor+VDHexColor.m */,
+				5A5EABC921C0DE4F0010DE1E /* UIColor+VDCommon.h */,
+				5A5EABCA21C0DE4F0010DE1E /* UIColor+VDCommon.m */,
+			);
+			path = Color;
+			sourceTree = "<group>";
+		};
+		5A5EABC721C0DC8E0010DE1E /* VDCommon */ = {
+			isa = PBXGroup;
+			children = (
+				5A5EABC021C0D6470010DE1E /* VDCommon.h */,
+				5A5EABCC21C0E1760010DE1E /* Tool */,
+				5A5EABB021C0AB3B0010DE1E /* Category */,
+			);
+			path = VDCommon;
+			sourceTree = "<group>";
+		};
+		5A5EABCC21C0E1760010DE1E /* Tool */ = {
+			isa = PBXGroup;
+			children = (
+				5A5EABD921C0EDDE0010DE1E /* VDTool.h */,
+				5A5EABCD21C0E1EC0010DE1E /* VDQRCodeTool.h */,
+				5A5EABCE21C0E1EC0010DE1E /* VDQRCodeTool.m */,
+				5A5EABD021C0E44A0010DE1E /* VDFileTool.h */,
+				5A5EABD121C0E44A0010DE1E /* VDFileTool.m */,
+				5A5EABD321C0E5D00010DE1E /* NSDateFormatTool.h */,
+				5A5EABD421C0E5D00010DE1E /* NSDateFormatTool.m */,
+				5A5EABD621C0EC510010DE1E /* VDJumpTool.h */,
+				5A5EABD721C0EC510010DE1E /* VDJumpTool.m */,
+			);
+			path = Tool;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -262,9 +374,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5A5EABBC21C0BAC70010DE1E /* NSString+VDCommon.m in Sources */,
 				5A5EAB8321C0A9D40010DE1E /* ViewController.m in Sources */,
+				5A5EABD221C0E44A0010DE1E /* VDFileTool.m in Sources */,
+				5A5EABD521C0E5D00010DE1E /* NSDateFormatTool.m in Sources */,
 				5A5EAB8E21C0A9D50010DE1E /* main.m in Sources */,
 				5A5EAB8021C0A9D40010DE1E /* AppDelegate.m in Sources */,
+				5A5EABB821C0AF5C0010DE1E /* UIImage+VDCommon.m in Sources */,
+				5A5EABC521C0D9370010DE1E /* UIColor+VDHexColor.m in Sources */,
+				5A5EABBF21C0D4BD0010DE1E /* NSMutableAttributedString+VDCommon.m in Sources */,
+				5A5EABCF21C0E1EC0010DE1E /* VDQRCodeTool.m in Sources */,
+				5A5EABCB21C0DE4F0010DE1E /* UIColor+VDCommon.m in Sources */,
+				5A5EABB421C0ABC50010DE1E /* UIView+VDCommon.m in Sources */,
+				5A5EABD821C0EC510010DE1E /* VDJumpTool.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
