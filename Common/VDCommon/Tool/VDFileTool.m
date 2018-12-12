@@ -195,7 +195,7 @@
 {
     if (filePath == nil || filePath.length == 0)
     {
-        return NO;
+        return nil;
     }
     NSFileManager *fileManager = [NSFileManager defaultManager];
     if ([fileManager fileExistsAtPath:filePath] == NO)

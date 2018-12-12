@@ -10,9 +10,15 @@ Pod::Spec.new do |s|
     s.requires_arc = true
     s.source_files = 'Common/VDCommon/VDCommon.h'
     s.subspec 'Tool' do |ss|
-        ss.source_files = 'Common/VDCommon/Tool/**.{h,m}'
+        ss.ios.deployment_target = '7.0'
+        ss.osx.deployment_target = '10.9'
+        ss.tvos.deployment_target = '9.0'
+        ss.source_files = 'Common/VDCommon/Tool/VDTool.h','Common/VDCommon/Tool/**/**.{h,m}'
     end
     s.subspec 'Category' do |ss|
-        ss.source_files = 'Common/VDCommon/Category/**.{h,m}'
+        ss.ios.deployment_target = '7.0'
+        ss.osx.deployment_target = '10.9'
+        ss.tvos.deployment_target = '9.0'
+        ss.source_files = 'Common/VDCommon/Category/VDCategory.h','Common/VDCommon/Category/**/**.{h,m}'
     end
 end
