@@ -10,7 +10,7 @@
 #import <UIKit/UIKit.h>
 
 @implementation VDJumpTool
-+ (void)jumpToVC:(NSString *)vcName param:(id)param {
++ (void)jumpToVC:(NSString *)vcName param:(NSDictionary *)param {
     
     UIViewController *vc = nil;
     UINavigationController *navi = nil;
@@ -54,6 +54,11 @@
     }
     //需要跳转的页面的一些处理（比如传参...）
     UIViewController *toVC = [[NSClassFromString(vcName) alloc]init];
+    if (param) {
+        for (NSString *key in param.allKeys) {
+            [toVC setValue:param[key] forKey:key];
+        }
+    }
     if (visibleVC.navigationController) {
         [visibleVC.navigationController pushViewController:toVC animated:YES];
     } else {
