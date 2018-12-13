@@ -1,5 +1,5 @@
 //
-//  NSDateFormatTool.h
+//  VDDateFormatTool.h
 //  Common
 //
 //  Created by volientDuan on 2018/12/12.
@@ -28,7 +28,7 @@
  ss: 秒，2位
  S: 毫秒
  *******/
-@interface NSDateFormatTool : NSObject
+@interface VDDateFormatTool : NSObject
 
 + (NSTimeInterval)getNowTimeInterval;
 

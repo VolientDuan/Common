@@ -15,6 +15,9 @@
 #import "UIImage+VDCommon.h"
 
 #import "UIView+VDCommon.h"
+#import "UIView+VDInitialize.h"
+#import "UIView+VDGesture.h"
+#import "UIControl+VDEvent.h"
 
 #import "UIColor+VDHexColor.h"
 #import "UIColor+VDCommon.h"

@@ -10,7 +10,7 @@
 #define Tool_h
 #import "VDQRCodeTool.h"
 #import "VDFileTool.h"
-#import "NSDateFormatTool.h"
+#import "VDDateFormatTool.h"
 #import "VDJumpTool.h"
 
 #endif /* Tool_h */

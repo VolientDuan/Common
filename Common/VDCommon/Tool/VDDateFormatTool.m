@@ -1,14 +1,14 @@
 //
-//  NSDateFormatTool.m
+//  VDDateFormatTool.m
 //  Common
 //
 //  Created by volientDuan on 2018/12/12.
 //  Copyright © 2018 volientDuan. All rights reserved.
 //
 
-#import "NSDateFormatTool.h"
+#import "VDDateFormatTool.h"
 
-@implementation NSDateFormatTool
+@implementation VDDateFormatTool
 
 + (NSTimeInterval)getTimerInterval:(NSTimeInterval)timeInterval{
     if (timeInterval > 1000000000000) {

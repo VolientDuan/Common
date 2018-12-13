@@ -23,8 +23,12 @@
 		5A5EABCB21C0DE4F0010DE1E /* UIColor+VDCommon.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A5EABCA21C0DE4F0010DE1E /* UIColor+VDCommon.m */; };
 		5A5EABCF21C0E1EC0010DE1E /* VDQRCodeTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A5EABCE21C0E1EC0010DE1E /* VDQRCodeTool.m */; };
 		5A5EABD221C0E44A0010DE1E /* VDFileTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A5EABD121C0E44A0010DE1E /* VDFileTool.m */; };
-		5A5EABD521C0E5D00010DE1E /* NSDateFormatTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A5EABD421C0E5D00010DE1E /* NSDateFormatTool.m */; };
+		5A5EABD521C0E5D00010DE1E /* VDDateFormatTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A5EABD421C0E5D00010DE1E /* VDDateFormatTool.m */; };
 		5A5EABD821C0EC510010DE1E /* VDJumpTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A5EABD721C0EC510010DE1E /* VDJumpTool.m */; };
+		5A5EABDC21C1F2D00010DE1E /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A5EABDB21C1F2D00010DE1E /* FirstViewController.m */; };
+		5A5EABDF21C1FBF70010DE1E /* UIView+VDInitialize.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A5EABDE21C1FBF70010DE1E /* UIView+VDInitialize.m */; };
+		5A5EABE221C204E60010DE1E /* UIView+VDGesture.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A5EABE121C204E60010DE1E /* UIView+VDGesture.m */; };
+		5ACFD7A121C23CE10093F4D5 /* UIControl+VDEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ACFD7A021C23CE00093F4D5 /* UIControl+VDEvent.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,11 +83,19 @@
 		5A5EABCE21C0E1EC0010DE1E /* VDQRCodeTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VDQRCodeTool.m; sourceTree = "<group>"; };
 		5A5EABD021C0E44A0010DE1E /* VDFileTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VDFileTool.h; sourceTree = "<group>"; };
 		5A5EABD121C0E44A0010DE1E /* VDFileTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VDFileTool.m; sourceTree = "<group>"; };
-		5A5EABD321C0E5D00010DE1E /* NSDateFormatTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NSDateFormatTool.h; sourceTree = "<group>"; };
-		5A5EABD421C0E5D00010DE1E /* NSDateFormatTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NSDateFormatTool.m; sourceTree = "<group>"; };
+		5A5EABD321C0E5D00010DE1E /* VDDateFormatTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VDDateFormatTool.h; sourceTree = "<group>"; };
+		5A5EABD421C0E5D00010DE1E /* VDDateFormatTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VDDateFormatTool.m; sourceTree = "<group>"; };
 		5A5EABD621C0EC510010DE1E /* VDJumpTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VDJumpTool.h; sourceTree = "<group>"; };
 		5A5EABD721C0EC510010DE1E /* VDJumpTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VDJumpTool.m; sourceTree = "<group>"; };
 		5A5EABD921C0EDDE0010DE1E /* VDTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VDTool.h; sourceTree = "<group>"; };
+		5A5EABDA21C1F2D00010DE1E /* FirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
+		5A5EABDB21C1F2D00010DE1E /* FirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
+		5A5EABDD21C1FBF70010DE1E /* UIView+VDInitialize.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+VDInitialize.h"; sourceTree = "<group>"; };
+		5A5EABDE21C1FBF70010DE1E /* UIView+VDInitialize.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+VDInitialize.m"; sourceTree = "<group>"; };
+		5A5EABE021C204E60010DE1E /* UIView+VDGesture.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+VDGesture.h"; sourceTree = "<group>"; };
+		5A5EABE121C204E60010DE1E /* UIView+VDGesture.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+VDGesture.m"; sourceTree = "<group>"; };
+		5ACFD79F21C23CE00093F4D5 /* UIControl+VDEvent.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIControl+VDEvent.h"; sourceTree = "<group>"; };
+		5ACFD7A021C23CE00093F4D5 /* UIControl+VDEvent.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIControl+VDEvent.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,6 +156,8 @@
 				5A5EAB8921C0A9D50010DE1E /* LaunchScreen.storyboard */,
 				5A5EAB8C21C0A9D50010DE1E /* Info.plist */,
 				5A5EAB8D21C0A9D50010DE1E /* main.m */,
+				5A5EABDA21C1F2D00010DE1E /* FirstViewController.h */,
+				5A5EABDB21C1F2D00010DE1E /* FirstViewController.m */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -183,6 +197,12 @@
 			children = (
 				5A5EABB221C0ABC50010DE1E /* UIView+VDCommon.h */,
 				5A5EABB321C0ABC50010DE1E /* UIView+VDCommon.m */,
+				5A5EABDD21C1FBF70010DE1E /* UIView+VDInitialize.h */,
+				5A5EABDE21C1FBF70010DE1E /* UIView+VDInitialize.m */,
+				5A5EABE021C204E60010DE1E /* UIView+VDGesture.h */,
+				5A5EABE121C204E60010DE1E /* UIView+VDGesture.m */,
+				5ACFD79F21C23CE00093F4D5 /* UIControl+VDEvent.h */,
+				5ACFD7A021C23CE00093F4D5 /* UIControl+VDEvent.m */,
 			);
 			path = UIView;
 			sourceTree = "<group>";
@@ -236,8 +256,8 @@
 				5A5EABCE21C0E1EC0010DE1E /* VDQRCodeTool.m */,
 				5A5EABD021C0E44A0010DE1E /* VDFileTool.h */,
 				5A5EABD121C0E44A0010DE1E /* VDFileTool.m */,
-				5A5EABD321C0E5D00010DE1E /* NSDateFormatTool.h */,
-				5A5EABD421C0E5D00010DE1E /* NSDateFormatTool.m */,
+				5A5EABD321C0E5D00010DE1E /* VDDateFormatTool.h */,
+				5A5EABD421C0E5D00010DE1E /* VDDateFormatTool.m */,
 				5A5EABD621C0EC510010DE1E /* VDJumpTool.h */,
 				5A5EABD721C0EC510010DE1E /* VDJumpTool.m */,
 			);
@@ -377,12 +397,16 @@
 				5A5EABBC21C0BAC70010DE1E /* NSString+VDCommon.m in Sources */,
 				5A5EAB8321C0A9D40010DE1E /* ViewController.m in Sources */,
 				5A5EABD221C0E44A0010DE1E /* VDFileTool.m in Sources */,
-				5A5EABD521C0E5D00010DE1E /* NSDateFormatTool.m in Sources */,
+				5A5EABD521C0E5D00010DE1E /* VDDateFormatTool.m in Sources */,
 				5A5EAB8E21C0A9D50010DE1E /* main.m in Sources */,
+				5A5EABDF21C1FBF70010DE1E /* UIView+VDInitialize.m in Sources */,
 				5A5EAB8021C0A9D40010DE1E /* AppDelegate.m in Sources */,
 				5A5EABB821C0AF5C0010DE1E /* UIImage+VDCommon.m in Sources */,
 				5A5EABC521C0D9370010DE1E /* UIColor+VDHexColor.m in Sources */,
 				5A5EABBF21C0D4BD0010DE1E /* NSMutableAttributedString+VDCommon.m in Sources */,
+				5ACFD7A121C23CE10093F4D5 /* UIControl+VDEvent.m in Sources */,
+				5A5EABDC21C1F2D00010DE1E /* FirstViewController.m in Sources */,
+				5A5EABE221C204E60010DE1E /* UIView+VDGesture.m in Sources */,
 				5A5EABCF21C0E1EC0010DE1E /* VDQRCodeTool.m in Sources */,
 				5A5EABCB21C0DE4F0010DE1E /* UIColor+VDCommon.m in Sources */,
 				5A5EABB421C0ABC50010DE1E /* UIView+VDCommon.m in Sources */,
