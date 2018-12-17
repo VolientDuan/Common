@@ -7,12 +7,14 @@
 * 手动下载VDCommon目录下所有文件导入项目
 * CocoaPods
 ```
-pod 'VDCommon', '~> 1.0.1'
+pod 'VDCommon', '~> 1.0.2'
 ```
 
 ### 目录结构
 ```
--- VDCommon         
+-- VDCommon
+    ---Helper
+        ---- VDNotiHelper // 通知绑定和回调帮助类
     ---Tool
         ---- VDDateFormatTool //时间格式化工具
         ---- VDFileTool // 文件管理工具
