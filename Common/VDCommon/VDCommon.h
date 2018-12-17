@@ -11,5 +11,6 @@
 
 #import "VDTool.h"
 #import "VDCategory.h"
+#import "VDHelper.h"
 
 #endif /* VDCommon_h */

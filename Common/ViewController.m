@@ -7,7 +7,6 @@
 //
 
 #import "ViewController.h"
-#import "VDCommon/VDCommon.h"
 
 @interface ViewController ()
 
@@ -19,6 +18,9 @@
     [super viewDidLoad];
     
     [self initUI];
+    [self vd_notiWithName:@"EnterFirstViewController" block:^(id info) {
+        NSLog(@"%@",info);
+    }];
     // Do any additional setup after loading the view.
 }
 

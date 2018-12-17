@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface UIColor (VDHexColor)
-
+/* eg: hexString  =  @"#FFFFFF", @"FFFFFF", @"0xFFFFFF" ... */
 + (UIColor *)vd_colorWithHexString:(NSString *)hexString;
 + (UIColor *)vd_colorWithHexString:(NSString *)hexString alpha:(CGFloat)alpha;
 

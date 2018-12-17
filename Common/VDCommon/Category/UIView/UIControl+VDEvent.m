@@ -40,7 +40,7 @@
 static char *VDEventCallbacksKey = "VDEventCallbacksKey";
 
 /**
- 时间回调类管理者
+ 事件回调管理者
  */
 @interface UIControl (VDEventCallbacks)
 @property (nonatomic, strong)NSMutableDictionary *vdEventcallBacks;

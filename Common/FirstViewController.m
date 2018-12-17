@@ -19,7 +19,13 @@
     [self initUI];
     // Do any additional setup after loading the view.
 }
-
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+}
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    [VDNotiHelper postNotiWithName:@"FirstViewDidAppear" object:@"FirstViewDidAppear"];
+}
 - (void)initUI {
     
     self.view.backgroundColor = UIColor.whiteColor;
@@ -30,6 +36,16 @@
     [button setTitle:self.firstTitle forState:UIControlStateNormal];
     [button setTitleColor:UIColor.blackColor forState:UIControlStateNormal];
     button.titleLabel.font = [UIFont systemFontOfSize:15];
+    
+    UILabel *label = [UILabel vd_labelWithFrame:CGRectMake(0, button.v_bottom+10, 300, 50) title:@"viewDidLoad" color:[UIColor vd_colorWithHexString:@"#FFFFFF"] font:[UIFont systemFontOfSize:15]];
+    label.v_centerX = UIScreen.mainScreen.bounds.size.width/2;
+    label.textAlignment = NSTextAlignmentCenter;
+    label.backgroundColor = [UIColor vd_colorWithHexString:@"#567893"];
+    [self.view addSubview:label];
+    
+    [self vd_notiWithName:@"FirstViewDidAppear" block:^(id info) {
+        label.text = info;
+    }];
 }
 - (void)btnClick {
     [self dismissViewControllerAnimated:YES completion:^{
