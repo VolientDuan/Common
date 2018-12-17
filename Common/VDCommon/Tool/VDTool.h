@@ -12,5 +12,6 @@
 #import "VDFileTool.h"
 #import "VDDateFormatTool.h"
 #import "VDJumpTool.h"
+#import "VDDeviceTool.h"
 
 #endif /* Tool_h */

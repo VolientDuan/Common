@@ -30,6 +30,7 @@
 		5A5EABE221C204E60010DE1E /* UIView+VDGesture.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A5EABE121C204E60010DE1E /* UIView+VDGesture.m */; };
 		5ACFD7A121C23CE10093F4D5 /* UIControl+VDEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ACFD7A021C23CE00093F4D5 /* UIControl+VDEvent.m */; };
 		5ADAA6C721C7466C00335377 /* VDNotiHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ADAA6C621C7466C00335377 /* VDNotiHelper.m */; };
+		5ADAA6CC21C79EA800335377 /* VDDeviceTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ADAA6CB21C79EA800335377 /* VDDeviceTool.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -101,6 +102,8 @@
 		5ADAA6C621C7466C00335377 /* VDNotiHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VDNotiHelper.m; sourceTree = "<group>"; };
 		5ADAA6C821C7882800335377 /* VDHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VDHelper.h; sourceTree = "<group>"; };
 		5ADAA6C921C788D900335377 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		5ADAA6CA21C79EA800335377 /* VDDeviceTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VDDeviceTool.h; sourceTree = "<group>"; };
+		5ADAA6CB21C79EA800335377 /* VDDeviceTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VDDeviceTool.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -267,6 +270,8 @@
 				5A5EABD421C0E5D00010DE1E /* VDDateFormatTool.m */,
 				5A5EABD621C0EC510010DE1E /* VDJumpTool.h */,
 				5A5EABD721C0EC510010DE1E /* VDJumpTool.m */,
+				5ADAA6CA21C79EA800335377 /* VDDeviceTool.h */,
+				5ADAA6CB21C79EA800335377 /* VDDeviceTool.m */,
 			);
 			path = Tool;
 			sourceTree = "<group>";
@@ -428,6 +433,7 @@
 				5A5EABCB21C0DE4F0010DE1E /* UIColor+VDCommon.m in Sources */,
 				5A5EABB421C0ABC50010DE1E /* UIView+VDCommon.m in Sources */,
 				5A5EABD821C0EC510010DE1E /* VDJumpTool.m in Sources */,
+				5ADAA6CC21C79EA800335377 /* VDDeviceTool.m in Sources */,
 				5ADAA6C721C7466C00335377 /* VDNotiHelper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

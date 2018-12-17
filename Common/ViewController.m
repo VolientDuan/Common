@@ -18,9 +18,10 @@
     [super viewDidLoad];
     
     [self initUI];
-    [self vd_notiWithName:@"EnterFirstViewController" block:^(id info) {
-        NSLog(@"%@",info);
-    }];
+    NSLog(@"systemName:%@",VDDeviceTool.systemName);
+    NSLog(@"systemVersion:%@",VDDeviceTool.systemVersion);
+    NSLog(@"appVersion:%@",VDDeviceTool.appVersion);
+    NSLog(@"appBuildNo:%@",VDDeviceTool.appBuildNo);
     // Do any additional setup after loading the view.
 }
 
