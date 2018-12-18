@@ -2,13 +2,15 @@ a=`grep -E 's.version.*=' VDCommon.podspec`
 b=${a#*\'}
 version=${b%\'*}
 LineNumber=`grep -nE 's.version.*=' VDCommon.podspec | cut -d : -f1`
-echo "current version is ${version}, please enter the new version:" #-n用于允许用户在字符串后面立即输入数据，而不是在下一行输入。
+echo "current version is ${version}, please enter the new version:"
 read newVersion
-# sed -i ".old" "${LineNumber}s/${version}/${newVersion}/g" VDCommon.podspec
+# 修改VDCommon.podspec文件中的version为指定值
 sed -i "" "${LineNumber}s/${version}/${newVersion}/g" VDCommon.podspec
+# 修改readme版本号
+sed -i "" "s/${version}/${newVersion}/g" README.md
 echo "git commit and git push origin master ？ (y/n):"
 read isCommit
-if [[ ${isCommit} = "y" ]]; then
+if [[ ${isCommit} = "y" ]] || [[ ${isCommit} = "Y" ]]; then
 	git add .
 	echo "please ender commit info:"
 	read commitInfo
