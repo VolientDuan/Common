@@ -29,6 +29,8 @@
 		5A5EABDF21C1FBF70010DE1E /* UIView+VDInitialize.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A5EABDE21C1FBF70010DE1E /* UIView+VDInitialize.m */; };
 		5A5EABE221C204E60010DE1E /* UIView+VDGesture.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A5EABE121C204E60010DE1E /* UIView+VDGesture.m */; };
 		5A94F18221C9F150003F92F4 /* VDAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A94F18121C9F150003F92F4 /* VDAnimation.m */; };
+		5A94F18B21CA467C003F92F4 /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A94F18A21CA467C003F92F4 /* WebViewController.m */; };
+		5A94F18E21CA4B80003F92F4 /* VDWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A94F18D21CA4B80003F92F4 /* VDWebView.m */; };
 		5ACFD7A121C23CE10093F4D5 /* UIControl+VDEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ACFD7A021C23CE00093F4D5 /* UIControl+VDEvent.m */; };
 		5ADAA6C721C7466C00335377 /* VDNotiHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ADAA6C621C7466C00335377 /* VDNotiHelper.m */; };
 		5ADAA6CC21C79EA800335377 /* VDDeviceTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ADAA6CB21C79EA800335377 /* VDDeviceTool.m */; };
@@ -99,6 +101,10 @@
 		5A5EABE121C204E60010DE1E /* UIView+VDGesture.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+VDGesture.m"; sourceTree = "<group>"; };
 		5A94F18021C9F150003F92F4 /* VDAnimation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VDAnimation.h; sourceTree = "<group>"; };
 		5A94F18121C9F150003F92F4 /* VDAnimation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VDAnimation.m; sourceTree = "<group>"; };
+		5A94F18921CA467C003F92F4 /* WebViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WebViewController.h; sourceTree = "<group>"; };
+		5A94F18A21CA467C003F92F4 /* WebViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WebViewController.m; sourceTree = "<group>"; };
+		5A94F18C21CA4B80003F92F4 /* VDWebView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VDWebView.h; sourceTree = "<group>"; };
+		5A94F18D21CA4B80003F92F4 /* VDWebView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VDWebView.m; sourceTree = "<group>"; };
 		5ACFD79F21C23CE00093F4D5 /* UIControl+VDEvent.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIControl+VDEvent.h"; sourceTree = "<group>"; };
 		5ACFD7A021C23CE00093F4D5 /* UIControl+VDEvent.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIControl+VDEvent.m"; sourceTree = "<group>"; };
 		5ADAA6C521C7466C00335377 /* VDNotiHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VDNotiHelper.h; sourceTree = "<group>"; };
@@ -157,6 +163,7 @@
 		5A5EAB7D21C0A9D40010DE1E /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				5A94F18F21CA4E11003F92F4 /* Classes */,
 				5A5EABC721C0DC8E0010DE1E /* VDCommon */,
 				5A5EAB7E21C0A9D40010DE1E /* AppDelegate.h */,
 				5A5EAB7F21C0A9D40010DE1E /* AppDelegate.m */,
@@ -167,8 +174,6 @@
 				5A5EAB8921C0A9D50010DE1E /* LaunchScreen.storyboard */,
 				5A5EAB8C21C0A9D50010DE1E /* Info.plist */,
 				5A5EAB8D21C0A9D50010DE1E /* main.m */,
-				5A5EABDA21C1F2D00010DE1E /* FirstViewController.h */,
-				5A5EABDB21C1F2D00010DE1E /* FirstViewController.m */,
 				5ADAA6C921C788D900335377 /* PrefixHeader.pch */,
 			);
 			path = Common;
@@ -293,8 +298,21 @@
 		5A94F18821CA4263003F92F4 /* Web */ = {
 			isa = PBXGroup;
 			children = (
+				5A94F18C21CA4B80003F92F4 /* VDWebView.h */,
+				5A94F18D21CA4B80003F92F4 /* VDWebView.m */,
 			);
 			path = Web;
+			sourceTree = "<group>";
+		};
+		5A94F18F21CA4E11003F92F4 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				5A5EABDA21C1F2D00010DE1E /* FirstViewController.h */,
+				5A5EABDB21C1F2D00010DE1E /* FirstViewController.m */,
+				5A94F18921CA467C003F92F4 /* WebViewController.h */,
+				5A94F18A21CA467C003F92F4 /* WebViewController.m */,
+			);
+			path = Classes;
 			sourceTree = "<group>";
 		};
 		5AD1F91121C34A6100D9B95F /* Helper */ = {
@@ -438,6 +456,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5A5EABBC21C0BAC70010DE1E /* NSString+VDCommon.m in Sources */,
+				5A94F18B21CA467C003F92F4 /* WebViewController.m in Sources */,
 				5A5EAB8321C0A9D40010DE1E /* ViewController.m in Sources */,
 				5A5EABD221C0E44A0010DE1E /* VDFileTool.m in Sources */,
 				5A5EABD521C0E5D00010DE1E /* VDDateFormatTool.m in Sources */,
@@ -451,6 +470,7 @@
 				5ACFD7A121C23CE10093F4D5 /* UIControl+VDEvent.m in Sources */,
 				5A5EABDC21C1F2D00010DE1E /* FirstViewController.m in Sources */,
 				5A5EABE221C204E60010DE1E /* UIView+VDGesture.m in Sources */,
+				5A94F18E21CA4B80003F92F4 /* VDWebView.m in Sources */,
 				5A5EABCF21C0E1EC0010DE1E /* VDQRCodeTool.m in Sources */,
 				5A5EABCB21C0DE4F0010DE1E /* UIColor+VDCommon.m in Sources */,
 				5A5EABB421C0ABC50010DE1E /* UIView+VDCommon.m in Sources */,
@@ -562,7 +582,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -615,7 +635,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -631,6 +651,7 @@
 				DEVELOPMENT_TEAM = M6Z935H8QD;
 				GCC_PREFIX_HEADER = Common/PrefixHeader.pch;
 				INFOPLIST_FILE = Common/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -649,6 +670,7 @@
 				DEVELOPMENT_TEAM = M6Z935H8QD;
 				GCC_PREFIX_HEADER = Common/PrefixHeader.pch;
 				INFOPLIST_FILE = Common/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
