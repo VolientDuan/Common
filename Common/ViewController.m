@@ -63,6 +63,12 @@
         [textFd resignFirstResponder];
         NSLog(@"textField end editing");
     });
+    
+    UIView *textAnimView = [[UIView alloc]initWithFrame:CGRectMake(textField.v_x, textField.v_bottom+20, 100, 100)];
+    textAnimView.backgroundColor = UIColor.cyanColor;
+    [self.view addSubview:textAnimView];
+    VDAnimation *anim = [[VDAnimation alloc]init];
+    [anim setAnimationWithText:@"V D" toView:textAnimView];
 }
 
 - (void)jumpToolTest {
