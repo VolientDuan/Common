@@ -9,6 +9,34 @@
 #import <TargetConditionals.h>
 #import <dlfcn.h>
 
+@interface VDScripMessageHandler: NSObject<WKScriptMessageHandler>
+@property (nonatomic, weak)id target;
+@property (nonatomic, assign)SEL sel;
+- (instancetype)initWithTarget:(id)target selector:(SEL)selector;
+
+@end
+@implementation VDScripMessageHandler
+
+- (instancetype)initWithTarget:(id)target selector:(SEL)selector {
+    self = [super init];
+    if (self) {
+        self.target = target;
+        self.sel = selector;
+    }
+    return self;
+}
+
+- (void)userContentController:(WKUserContentController *)userContentController didReceiveScriptMessage:(WKScriptMessage *)message {
+    IMP imp = [self.target methodForSelector:self.sel];
+    void (*func)(id, SEL, WKScriptMessage *) = (void *)imp;
+    func(self.target,self.sel, message);
+}
+
+- (void)dealloc {
+    NSLog(@"VDScripMessageHandle已释放");
+}
+
+@end
 
 @interface VDWebView()< WKNavigationDelegate,WKUIDelegate>
 
@@ -17,6 +45,10 @@
 @property (nonatomic, strong) NSURLRequest *currentRequest;
 
 @property (nonatomic, copy) NSString *title;
+
+@property (nonatomic, strong) VDScripMessageHandler *scriptMessageHandlerDelegate;
+@property (nonatomic, weak) id scriptMessageHandler;
+@property (nonatomic, strong) NSMutableArray *scriptMessageNames;
 
 @end
 
@@ -72,7 +104,6 @@
     
     [webView addObserver:self forKeyPath:@"estimatedProgress" options:NSKeyValueObservingOptionNew context:nil];
     [webView addObserver:self forKeyPath:@"title" options:NSKeyValueObservingOptionNew context:nil];
-    
     _realWebView = webView;
     
 }
@@ -81,7 +112,7 @@
     if([keyPath isEqualToString:@"estimatedProgress"])
     {
         self.estimatedProgress = [change[NSKeyValueChangeNewKey] floatValue];
-        
+        NSLog(@"estimatedProgress:%lf",self.estimatedProgress);
     }
     else if([keyPath isEqualToString:@"title"])
     {
@@ -128,7 +159,7 @@
 #pragma mark- WKUIDelegate
 
 
-#pragma mark- CALLBACK IMYVKWebView Delegate
+#pragma mark- CALLBACK WebView Delegate
 
 - (void)callback_webViewDidFinishLoad
 {
@@ -162,6 +193,84 @@
         resultBOOL = [self.delegate webView:self shouldStartLoadWithRequest:request navigationType:navigationType];
     }
     return resultBOOL;
+}
+
+#pragma mark - WKScriptMessageHandler
+- (VDScripMessageHandler *)scriptMessageHandlerDelegate {
+    if (!_scriptMessageHandlerDelegate) {
+        _scriptMessageHandlerDelegate = [[VDScripMessageHandler alloc]initWithTarget:self selector:@selector(didReceiveScriptMessage:)];
+    }
+    return _scriptMessageHandlerDelegate;
+}
+- (NSMutableArray *)scriptMessageNames {
+    if (!_scriptMessageNames) {
+        _scriptMessageNames = [NSMutableArray array];
+    }
+    return _scriptMessageNames;
+}
+
+/**
+ *  添加js回调oc通知方式，适用于 iOS8 之后
+ */
+- (void)addScriptMessageHandler:(id)scriptMessageHandler name:(NSString *)name
+{
+    // 先只允许添加一个hander对象
+    self.scriptMessageHandler = scriptMessageHandler;
+    __block BOOL isHaved = NO;
+    [self.scriptMessageNames enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        if ([obj isEqualToString:name]) {
+            isHaved = YES;
+        }
+    }];
+    if (!isHaved) {
+        [self.scriptMessageNames addObject:name];
+        [self.realWebView.configuration.userContentController addScriptMessageHandler:self.scriptMessageHandlerDelegate name:name];
+    }
+}
+
+/**
+ *  注销 注册过的js回调oc通知方式，适用于 iOS8 之后
+ */
+- (void)removeScriptMessageHandlerForName:(NSString *)name
+{
+    [_realWebView.configuration.userContentController removeScriptMessageHandlerForName:name];
+}
+
+/**
+ *  注销 注册过的js回调oc通知方式，适用于 iOS8 之后
+ */
+- (void)removeScriptMessageHandler
+{
+    for (NSString *name in self.scriptMessageNames) {
+        [self removeScriptMessageHandlerForName:name];
+    }
+}
+- (void)didReceiveScriptMessage:(WKScriptMessage *)message {
+    if ([self.delegate respondsToSelector:@selector(webView:didReceiveScriptMessage:)]) {
+        [self.delegate webView:self didReceiveScriptMessage:message];
+    }else {
+        SEL sel = NSSelectorFromString(message.name);
+        NSMethodSignature *sign = [self.scriptMessageHandler methodSignatureForSelector:sel];
+        BOOL isHavedParam = NO;
+        if (!sign) {
+            isHavedParam = YES;
+            sel = NSSelectorFromString([NSString stringWithFormat:@"%@:",message.name]);
+            sign = [self.scriptMessageHandler methodSignatureForSelector:sel];
+        }
+        if (sign) {
+            NSInvocation *invocation = [NSInvocation invocationWithMethodSignature:sign];
+            [invocation setTarget:self.scriptMessageHandler];
+            [invocation setSelector:sel];
+            if (isHavedParam) {
+                id param = message.body;
+                [invocation setArgument:&(param) atIndex:2];
+            }
+            [invocation invoke];
+        }else {
+            NSLog(@"未定义方法: %@或%@:\nwaring:此方法最多支持一个参数的自定义方法",message.name,message.name
+                  );
+        }
+    }
 }
 
 #pragma mark- 基础方法
@@ -296,22 +405,6 @@
     return _scalesPageToFit;
 }
 
-/**
- *  添加js回调oc通知方式，适用于 iOS8 之后
- */
-- (void)addScriptMessageHandler:(id <WKScriptMessageHandler>)scriptMessageHandler name:(NSString *)name
-{
-    [[(WKWebView *)_realWebView configuration].userContentController addScriptMessageHandler:scriptMessageHandler name:name];
-}
-
-/**
- *  注销 注册过的js回调oc通知方式，适用于 iOS8 之后
- */
-- (void)removeScriptMessageHandlerForName:(NSString *)name
-{
-    [[(WKWebView *)_realWebView configuration].userContentController removeScriptMessageHandlerForName:name];
-}
-
 -(NSInteger)countOfHistory
 {
     
@@ -386,13 +479,16 @@
 #pragma mark- 清理
 -(void)dealloc
 {
-    
     WKWebView* webView = _realWebView;
     webView.UIDelegate = nil;
     webView.navigationDelegate = nil;
     
     [webView removeObserver:self forKeyPath:@"estimatedProgress"];
     [webView removeObserver:self forKeyPath:@"title"];
+    
+    // 如果添加JS调用OC的监听 dealloc 一定要移除所有 否则handler将无法释放
+    [self removeScriptMessageHandler];
+    
     [_realWebView scrollView].delegate = nil;
     [_realWebView stopLoading];
     [(UIWebView*)_realWebView loadHTMLString:@"" baseURL:nil];

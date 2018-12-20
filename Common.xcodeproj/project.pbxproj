@@ -31,6 +31,7 @@
 		5A94F18221C9F150003F92F4 /* VDAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A94F18121C9F150003F92F4 /* VDAnimation.m */; };
 		5A94F18B21CA467C003F92F4 /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A94F18A21CA467C003F92F4 /* WebViewController.m */; };
 		5A94F18E21CA4B80003F92F4 /* VDWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A94F18D21CA4B80003F92F4 /* VDWebView.m */; };
+		5A94F19321CB96C9003F92F4 /* wkweb.html in Resources */ = {isa = PBXBuildFile; fileRef = 5A94F19221CB96C9003F92F4 /* wkweb.html */; };
 		5ACFD7A121C23CE10093F4D5 /* UIControl+VDEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ACFD7A021C23CE00093F4D5 /* UIControl+VDEvent.m */; };
 		5ADAA6C721C7466C00335377 /* VDNotiHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ADAA6C621C7466C00335377 /* VDNotiHelper.m */; };
 		5ADAA6CC21C79EA800335377 /* VDDeviceTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ADAA6CB21C79EA800335377 /* VDDeviceTool.m */; };
@@ -105,6 +106,7 @@
 		5A94F18A21CA467C003F92F4 /* WebViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WebViewController.m; sourceTree = "<group>"; };
 		5A94F18C21CA4B80003F92F4 /* VDWebView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VDWebView.h; sourceTree = "<group>"; };
 		5A94F18D21CA4B80003F92F4 /* VDWebView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VDWebView.m; sourceTree = "<group>"; };
+		5A94F19221CB96C9003F92F4 /* wkweb.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = wkweb.html; sourceTree = "<group>"; };
 		5ACFD79F21C23CE00093F4D5 /* UIControl+VDEvent.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIControl+VDEvent.h"; sourceTree = "<group>"; };
 		5ACFD7A021C23CE00093F4D5 /* UIControl+VDEvent.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIControl+VDEvent.m"; sourceTree = "<group>"; };
 		5ADAA6C521C7466C00335377 /* VDNotiHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VDNotiHelper.h; sourceTree = "<group>"; };
@@ -163,6 +165,7 @@
 		5A5EAB7D21C0A9D40010DE1E /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				5A94F19021CB9685003F92F4 /* Source */,
 				5A94F18F21CA4E11003F92F4 /* Classes */,
 				5A5EABC721C0DC8E0010DE1E /* VDCommon */,
 				5A5EAB7E21C0A9D40010DE1E /* AppDelegate.h */,
@@ -315,6 +318,22 @@
 			path = Classes;
 			sourceTree = "<group>";
 		};
+		5A94F19021CB9685003F92F4 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				5A94F19121CB969F003F92F4 /* html */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		5A94F19121CB969F003F92F4 /* html */ = {
+			isa = PBXGroup;
+			children = (
+				5A94F19221CB96C9003F92F4 /* wkweb.html */,
+			);
+			path = html;
+			sourceTree = "<group>";
+		};
 		5AD1F91121C34A6100D9B95F /* Helper */ = {
 			isa = PBXGroup;
 			children = (
@@ -429,6 +448,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5A5EAB8B21C0A9D50010DE1E /* LaunchScreen.storyboard in Resources */,
+				5A94F19321CB96C9003F92F4 /* wkweb.html in Resources */,
 				5A5EAB8821C0A9D50010DE1E /* Assets.xcassets in Resources */,
 				5A5EAB8621C0A9D40010DE1E /* Main.storyboard in Resources */,
 			);
