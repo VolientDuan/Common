@@ -26,11 +26,13 @@
 
 ///内部使用的webView
 @property (nonatomic, readonly) WKWebView *realWebView;
+@property (nonatomic, readonly) NSURLRequest *originRequest;
 ///预估网页加载进度
 @property (nonatomic, readonly) double estimatedProgress;
-
-@property (nonatomic, readonly) NSURLRequest *originRequest;
-
+// 是否显示进度条 默认不显示
+@property (nonatomic, assign) BOOL isShowProgressBar;
+///进度条
+@property (nonatomic, strong) UIView *progressBar;
 /**
  *  添加js回调oc通知方式
  *  关于js调用说明：JS通过window.webkit.messageHandlers.<OC方法名>.postMessage(<参数>) 调用OC方法 其中方法名和参数为必填项

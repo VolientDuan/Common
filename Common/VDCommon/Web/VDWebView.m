@@ -112,7 +112,14 @@
     if([keyPath isEqualToString:@"estimatedProgress"])
     {
         self.estimatedProgress = [change[NSKeyValueChangeNewKey] floatValue];
-        NSLog(@"estimatedProgress:%lf",self.estimatedProgress);
+        if (self.isShowProgressBar) {
+            self.progressBar.frame = CGRectMake(0, 0, self.bounds.size.width*self.estimatedProgress, 2);
+            if (self.estimatedProgress == 1) {
+                self.progressBar.hidden = YES;
+            }else {
+                self.progressBar.hidden = NO;
+            }
+        }
     }
     else if([keyPath isEqualToString:@"title"])
     {
@@ -120,6 +127,15 @@
     }
 }
 
+#pragma mark - 加载进度条
+- (UIView *)progressBar {
+    if (!_progressBar) {
+        _progressBar = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 0, 2)];
+        _progressBar.backgroundColor = UIColor.greenColor;
+        [self addSubview:_progressBar];
+    }
+    return _progressBar;
+}
 
 #pragma mark- WKNavigationDelegate
 
