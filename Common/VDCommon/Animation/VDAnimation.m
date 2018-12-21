@@ -32,6 +32,8 @@
     pathAnimation.toValue = [NSNumber numberWithFloat:1.0f];
     pathAnimation.autoreverses = YES;
     pathAnimation.repeatCount = MAXFLOAT;
+    //当动画结束移除效果-----同时可以解决页面跳转返回后动画停止问题
+    pathAnimation.removedOnCompletion = NO;
     [pathLayer addAnimation:pathAnimation forKey:@"strokeStart"];
 }
 
