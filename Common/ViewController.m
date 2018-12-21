@@ -67,8 +67,7 @@
     UIView *textAnimView = [[UIView alloc]initWithFrame:CGRectMake(textField.v_x, textField.v_bottom+20, 100, 100)];
     textAnimView.backgroundColor = UIColor.cyanColor;
     [self.view addSubview:textAnimView];
-    VDAnimation *anim = [[VDAnimation alloc]init];
-    [anim setAnimationWithText:@"V D" toView:textAnimView];
+    [VDAnimation setAnimationWithText:@"V D" fontName:@"Avenir-BlackOblique" fontSize:40.0 fillColor:UIColor.whiteColor strokeColor:UIColor.redColor lineWidth:1.0 duration:2.5 toView:textAnimView];
     
     UIButton *openWebBtn = [UIButton vd_buttonWithFrame:CGRectMake(20, textAnimView.v_bottom+20, 100, 100) image:nil title:@"jumpToWeb" titleColor:UIColor.whiteColor font:[UIFont systemFontOfSize:15]];
     openWebBtn.backgroundColor = UIColor.blueColor;

@@ -9,10 +9,9 @@
 #import "VDAnimation.h"
 #import <CoreText/CoreText.h>
 @implementation VDAnimation
-
-- (void)setAnimationWithText:(NSString *)text toView:(UIView *)view {
++ (CABasicAnimation *)setAnimationWithText:(NSString *)text fontName:(NSString *)fontName fontSize:(CGFloat)fontSize fillColor:(UIColor *)fillColor strokeColor:(UIColor *)strokeColor lineWidth:(CGFloat)lineWidth duration:(CFTimeInterval)duration toView:(UIView *)view {
     // 做字迹动画时 首先需要获取字迹路径
-    UIBezierPath *path = [self getPathWithText:text];
+    UIBezierPath *path = [self getPathWithText:text fontName:fontName fontSize:fontSize];
     // 创建字迹路径图层 并添加至view
     CAShapeLayer *pathLayer = [CAShapeLayer layer];
     pathLayer.frame = view.layer.bounds;
@@ -20,14 +19,14 @@
     pathLayer.backgroundColor = [view.backgroundColor CGColor];
     pathLayer.geometryFlipped = YES;
     pathLayer.path = path.CGPath;
-    pathLayer.strokeColor = UIColor.redColor.CGColor;
-    pathLayer.fillColor = view.backgroundColor.CGColor;
-    pathLayer.lineWidth = 1.0f;
+    pathLayer.strokeColor = strokeColor.CGColor;
+    pathLayer.fillColor = fillColor.CGColor;
+    pathLayer.lineWidth = lineWidth;
     pathLayer.lineJoin = kCALineJoinMiter;
     [view.layer addSublayer:pathLayer];
     // 给绘制图层添加动画
     CABasicAnimation *pathAnimation = [CABasicAnimation animationWithKeyPath:@"strokeEnd"];
-    pathAnimation.duration = 2.5;
+    pathAnimation.duration = duration;
     pathAnimation.fromValue = [NSNumber numberWithFloat:0.0f];
     pathAnimation.toValue = [NSNumber numberWithFloat:1.0f];
     pathAnimation.autoreverses = YES;
@@ -35,14 +34,14 @@
     //当动画结束移除效果-----同时可以解决页面跳转返回后动画停止问题
     pathAnimation.removedOnCompletion = NO;
     [pathLayer addAnimation:pathAnimation forKey:@"strokeStart"];
+    return pathAnimation;
 }
 
-- (UIBezierPath *)getPathWithText:(NSString *)text {
++ (UIBezierPath *)getPathWithText:(NSString *)text fontName:(NSString *)fontName fontSize:(CGFloat)fontSize {
     //创建可变path
     CGMutablePathRef letters = CGPathCreateMutable();
-
     //设置字体
-    CTFontRef font = CTFontCreateWithName(CFSTR("AvenirNext-Bold"), 40.0f, NULL);
+    CTFontRef font = CTFontCreateWithName((__bridge CFStringRef)fontName, fontSize, NULL);
     NSDictionary *attrs = [NSDictionary dictionaryWithObjectsAndKeys:
                            (__bridge id)font, kCTFontAttributeName,
                            nil];
