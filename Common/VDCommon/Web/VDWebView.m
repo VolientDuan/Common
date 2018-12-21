@@ -40,6 +40,7 @@
 
 @interface VDWebView()< WKNavigationDelegate,WKUIDelegate>
 
+@property (nonatomic, assign) CGFloat innerHeight;
 @property (nonatomic, assign) CGFloat estimatedProgress;
 @property (nonatomic, strong) NSURLRequest *originRequest;
 @property (nonatomic, strong) NSURLRequest *currentRequest;
@@ -112,8 +113,9 @@
     if([keyPath isEqualToString:@"estimatedProgress"])
     {
         self.estimatedProgress = [change[NSKeyValueChangeNewKey] floatValue];
+        // 判断是否显示进度条
         if (self.isShowProgressBar) {
-            self.progressBar.frame = CGRectMake(0, 0, self.bounds.size.width*self.estimatedProgress, 2);
+            self.progressBar.frame = CGRectMake(0, 0, self.bounds.size.width*self.estimatedProgress, self.progressBar.bounds.size.height);
             if (self.estimatedProgress == 1) {
                 self.progressBar.hidden = YES;
             }else {
@@ -162,6 +164,9 @@
 }
 -(void)webView:(WKWebView *)webView didFinishNavigation:(WKNavigation *)navigation
 {
+    [webView evaluateJavaScript:@"document.body.offsetHeight" completionHandler:^(id data, NSError *error) {
+        self.innerHeight = [data floatValue];
+    }];
     [self callback_webViewDidFinishLoad];
 }
 - (void)webView:(WKWebView *) webView didFailProvisionalNavigation: (WKNavigation *) navigation withError: (NSError *) error
@@ -173,8 +178,61 @@
     [self callback_webViewDidFailLoadWithError:error];
 }
 #pragma mark- WKUIDelegate
-
-
+- (void)webView:(WKWebView *)webView runJavaScriptAlertPanelWithMessage:(NSString *)message initiatedByFrame:(WKFrameInfo *)frame completionHandler:(void (^)(void))completionHandler {
+    if ([self.delegate respondsToSelector:@selector(webView:showAlertWithType:title:content:completionHandler:)]) {
+        [self.delegate webView:self showAlertWithType:VDJSAlertTypeAlert title:message content:nil completionHandler:^(id data) {
+            completionHandler();
+        }];
+    }else {
+        if (self.enableAlert||self.enableAllAlert) {
+            UIAlertController *alertController = [UIAlertController alertControllerWithTitle:message message:nil preferredStyle:UIAlertControllerStyleAlert];
+            [alertController addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+                
+                completionHandler();
+            }]];
+            [[UIApplication sharedApplication].keyWindow.rootViewController presentViewController:alertController animated:YES completion:nil];
+        }
+    }
+}
+- (void)webView:(WKWebView *)webView runJavaScriptConfirmPanelWithMessage:(NSString *)message initiatedByFrame:(WKFrameInfo *)frame completionHandler:(void (^)(BOOL))completionHandler {
+    if ([self.delegate respondsToSelector:@selector(webView:showAlertWithType:title:content:completionHandler:)]) {
+        [self.delegate webView:self showAlertWithType:VDJSAlertTypeConfirm title:@"提示" content:message completionHandler:^(id data) {
+            completionHandler([data boolValue]);
+        }];
+    } else {
+        if (self.enableConfirm||self.enableAllAlert) {
+            UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"提示" message:message?:@"" preferredStyle:UIAlertControllerStyleAlert];
+            [alertController addAction:([UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+                completionHandler(NO);
+            }])];
+            [alertController addAction:([UIAlertAction actionWithTitle:@"确认" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+                completionHandler(YES);
+            }])];
+            [[UIApplication sharedApplication].keyWindow.rootViewController presentViewController:alertController animated:YES completion:nil];
+        }
+    }
+    
+}
+- (void)webView:(WKWebView *)webView runJavaScriptTextInputPanelWithPrompt:(NSString *)prompt defaultText:(NSString *)defaultText initiatedByFrame:(WKFrameInfo *)frame completionHandler:(void (^)(NSString * _Nullable))completionHandler {
+    if ([self.delegate respondsToSelector:@selector(webView:showAlertWithType:title:content:completionHandler:)]) {
+        [self.delegate webView:self showAlertWithType:VDJSAlertTypePrompt title:prompt content:defaultText completionHandler:^(id data) {
+            
+            completionHandler(data == nil ? @"":[data stringValue]);
+        }];
+    }else {
+        if (self.enablePrompt||self.enableAllAlert) {
+            UIAlertController *alertController = [UIAlertController alertControllerWithTitle:prompt message:@"" preferredStyle:UIAlertControllerStyleAlert];
+            [alertController addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
+                textField.text = defaultText;
+            }];
+            [alertController addAction:([UIAlertAction actionWithTitle:@"完成" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+                completionHandler(alertController.textFields[0].text?:@"");
+            }])];
+            
+            [[UIApplication sharedApplication].keyWindow.rootViewController presentViewController:alertController animated:YES completion:nil];
+        }
+    }
+}
 #pragma mark- CALLBACK WebView Delegate
 
 - (void)callback_webViewDidFinishLoad
@@ -287,6 +345,15 @@
                   );
         }
     }
+}
+
+- (void)addUserScriptWithSource:(NSString *)source injectionTime:(WKUserScriptInjectionTime)injectionTime forMainFrameOnly:(BOOL)mainFrameOnly {
+    WKUserScript *script = [[WKUserScript alloc]initWithSource:source injectionTime:injectionTime forMainFrameOnly:mainFrameOnly];
+    [self.realWebView.configuration.userContentController addUserScript:script];
+}
+
+- (void)removeAllUserScripts {
+    [self.realWebView.configuration.userContentController removeAllUserScripts];
 }
 
 #pragma mark- 基础方法
@@ -504,7 +571,7 @@
     
     // 如果添加JS调用OC的监听 dealloc 一定要移除所有 否则handler将无法释放
     [self removeScriptMessageHandler];
-    
+    [self removeAllUserScripts];
     [_realWebView scrollView].delegate = nil;
     [_realWebView stopLoading];
     [(UIWebView*)_realWebView loadHTMLString:@"" baseURL:nil];

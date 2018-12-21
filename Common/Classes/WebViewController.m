@@ -25,6 +25,7 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     [self.view addSubview:self.webView];
+    self.webView.enableAllAlert = YES;
     NSString *path = [[NSBundle mainBundle]pathForResource:@"wkweb.html" ofType:nil];
     [self.webView loadRequest:[NSURLRequest requestWithURL:[NSURL fileURLWithPath:path]]];
 //    [self.webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"http://localhost:8080/wkweb/"]]];
@@ -50,6 +51,7 @@
     [self.webView addScriptMessageHandler:self name:@"reloadView"];
     [self.webView addScriptMessageHandler:self name:@"changeTitle"];
     [self.webView addScriptMessageHandler:self name:@"sendMessage"];
+    [self.webView addScriptMessageHandler:self name:@"injectJS"];
 }
 
 #pragma mark - js->oc的一些方法
@@ -64,6 +66,12 @@
 }
 - (void)sendMessage:(NSString *)msg {
     NSLog(@"%@",msg);
+}
+- (void)injectJS {
+    // 注入
+    [self.webView addUserScriptWithSource:@"alert(\"简单的注入个Alert\")" injectionTime:WKUserScriptInjectionTimeAtDocumentEnd forMainFrameOnly:YES];
+    // reload生效
+    [self.webView reload];
 }
 #pragma mark - property
 - (VDWebView *)webView {
