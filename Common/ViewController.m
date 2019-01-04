@@ -68,13 +68,6 @@
     textAnimView.backgroundColor = UIColor.cyanColor;
     [self.view addSubview:textAnimView];
     [VDAnimation setAnimationWithText:@"V D" fontName:@"Avenir-BlackOblique" fontSize:40.0 fillColor:UIColor.whiteColor strokeColor:UIColor.redColor lineWidth:1.0 duration:2.5 toView:textAnimView];
-    
-    UIButton *openWebBtn = [UIButton vd_buttonWithFrame:CGRectMake(20, textAnimView.v_bottom+20, 100, 100) image:nil title:@"jumpToWeb" titleColor:UIColor.whiteColor font:[UIFont systemFontOfSize:15]];
-    openWebBtn.backgroundColor = UIColor.blueColor;
-    [self.view addSubview:openWebBtn];
-    openWebBtn.vd_touchUpInsideEvent(^(UIButton *sender){
-        [VDJumpTool jumpToVC:@"WebViewController" param:nil];
-    });
 }
 
 - (void)jumpToolTest {

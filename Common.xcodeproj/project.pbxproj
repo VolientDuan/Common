@@ -29,8 +29,6 @@
 		5A5EABDF21C1FBF70010DE1E /* UIView+VDInitialize.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A5EABDE21C1FBF70010DE1E /* UIView+VDInitialize.m */; };
 		5A5EABE221C204E60010DE1E /* UIView+VDGesture.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A5EABE121C204E60010DE1E /* UIView+VDGesture.m */; };
 		5A94F18221C9F150003F92F4 /* VDAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A94F18121C9F150003F92F4 /* VDAnimation.m */; };
-		5A94F18B21CA467C003F92F4 /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A94F18A21CA467C003F92F4 /* WebViewController.m */; };
-		5A94F18E21CA4B80003F92F4 /* VDWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A94F18D21CA4B80003F92F4 /* VDWebView.m */; };
 		5A94F19321CB96C9003F92F4 /* wkweb.html in Resources */ = {isa = PBXBuildFile; fileRef = 5A94F19221CB96C9003F92F4 /* wkweb.html */; };
 		5ACFD7A121C23CE10093F4D5 /* UIControl+VDEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ACFD7A021C23CE00093F4D5 /* UIControl+VDEvent.m */; };
 		5ADAA6C721C7466C00335377 /* VDNotiHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ADAA6C621C7466C00335377 /* VDNotiHelper.m */; };
@@ -102,10 +100,6 @@
 		5A5EABE121C204E60010DE1E /* UIView+VDGesture.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+VDGesture.m"; sourceTree = "<group>"; };
 		5A94F18021C9F150003F92F4 /* VDAnimation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VDAnimation.h; sourceTree = "<group>"; };
 		5A94F18121C9F150003F92F4 /* VDAnimation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VDAnimation.m; sourceTree = "<group>"; };
-		5A94F18921CA467C003F92F4 /* WebViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WebViewController.h; sourceTree = "<group>"; };
-		5A94F18A21CA467C003F92F4 /* WebViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WebViewController.m; sourceTree = "<group>"; };
-		5A94F18C21CA4B80003F92F4 /* VDWebView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VDWebView.h; sourceTree = "<group>"; };
-		5A94F18D21CA4B80003F92F4 /* VDWebView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VDWebView.m; sourceTree = "<group>"; };
 		5A94F19221CB96C9003F92F4 /* wkweb.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = wkweb.html; sourceTree = "<group>"; };
 		5ACFD79F21C23CE00093F4D5 /* UIControl+VDEvent.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIControl+VDEvent.h"; sourceTree = "<group>"; };
 		5ACFD7A021C23CE00093F4D5 /* UIControl+VDEvent.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIControl+VDEvent.m"; sourceTree = "<group>"; };
@@ -262,7 +256,6 @@
 			isa = PBXGroup;
 			children = (
 				5A5EABC021C0D6470010DE1E /* VDCommon.h */,
-				5A94F18821CA4263003F92F4 /* Web */,
 				5A94F17F21C9F128003F92F4 /* Animation */,
 				5AD1F91121C34A6100D9B95F /* Helper */,
 				5A5EABCC21C0E1760010DE1E /* Tool */,
@@ -298,22 +291,11 @@
 			path = Animation;
 			sourceTree = "<group>";
 		};
-		5A94F18821CA4263003F92F4 /* Web */ = {
-			isa = PBXGroup;
-			children = (
-				5A94F18C21CA4B80003F92F4 /* VDWebView.h */,
-				5A94F18D21CA4B80003F92F4 /* VDWebView.m */,
-			);
-			path = Web;
-			sourceTree = "<group>";
-		};
 		5A94F18F21CA4E11003F92F4 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
 				5A5EABDA21C1F2D00010DE1E /* FirstViewController.h */,
 				5A5EABDB21C1F2D00010DE1E /* FirstViewController.m */,
-				5A94F18921CA467C003F92F4 /* WebViewController.h */,
-				5A94F18A21CA467C003F92F4 /* WebViewController.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -476,7 +458,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				5A5EABBC21C0BAC70010DE1E /* NSString+VDCommon.m in Sources */,
-				5A94F18B21CA467C003F92F4 /* WebViewController.m in Sources */,
 				5A5EAB8321C0A9D40010DE1E /* ViewController.m in Sources */,
 				5A5EABD221C0E44A0010DE1E /* VDFileTool.m in Sources */,
 				5A5EABD521C0E5D00010DE1E /* VDDateFormatTool.m in Sources */,
@@ -490,7 +471,6 @@
 				5ACFD7A121C23CE10093F4D5 /* UIControl+VDEvent.m in Sources */,
 				5A5EABDC21C1F2D00010DE1E /* FirstViewController.m in Sources */,
 				5A5EABE221C204E60010DE1E /* UIView+VDGesture.m in Sources */,
-				5A94F18E21CA4B80003F92F4 /* VDWebView.m in Sources */,
 				5A5EABCF21C0E1EC0010DE1E /* VDQRCodeTool.m in Sources */,
 				5A5EABCB21C0DE4F0010DE1E /* UIColor+VDCommon.m in Sources */,
 				5A5EABB421C0ABC50010DE1E /* UIView+VDCommon.m in Sources */,
