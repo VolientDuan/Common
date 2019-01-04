@@ -7,7 +7,7 @@
 * 手动下载VDCommon目录下所有文件导入项目
 * CocoaPods
 ```
-pod 'VDCommon', '~> 1.0.3'
+pod 'VDCommon', '~> 1.0.4'
 ```
 
 ### 目录结构

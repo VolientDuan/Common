@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
     s.name         = 'VDCommon'
-    s.version      = '1.0.3'
+    s.version      = '1.0.4'
     s.summary      = 'a common component'
     s.homepage     = 'https://github.com/VolientDuan/Common'
     s.license      = 'MIT'
@@ -21,5 +21,9 @@ Pod::Spec.new do |s|
     s.subspec 'Helper' do |ss|
     ss.ios.deployment_target = '8.0'
     ss.source_files = 'Common/VDCommon/Helper/VDHelper.h','Common/VDCommon/Helper/**/**.{h,m}'
+    end
+    s.subspec 'Animation' do |ss|
+    ss.ios.deployment_target = '8.0'
+    ss.source_files = 'Common/VDCommon/Animation/VDAnimation.h','Common/VDCommon/Animation/**/**.{h,m}'
     end
 end
