@@ -16,7 +16,7 @@ typedef UIControl* (^VDControlEventBlock)(VDControlEventCallBack);
 
 - (VDControlEventsBlock)vd_event;
 
-// 常用的按钮的点击时间
+// 常用的按钮的点击事件
 - (VDControlEventBlock)vd_touchUpInsideEvent;
 
 // 监听textField文本输入

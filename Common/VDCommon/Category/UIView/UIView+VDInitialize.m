@@ -32,6 +32,7 @@
     UILabel *label = [[UILabel alloc]initWithFrame:frame];
     label.textColor = color;
     label.font = font;
+    label.text = title;
     return label;
 }
 
