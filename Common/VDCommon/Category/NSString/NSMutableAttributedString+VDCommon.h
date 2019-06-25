@@ -38,5 +38,17 @@
 - (NSMutableAttributedString *)vd_setColor:(UIColor *)color range:(NSRange)range;
 - (NSMutableAttributedString *)vd_setFont:(UIFont *)font range:(NSRange)range;
 - (NSMutableAttributedString *)vd_setUnderline:(NSRange)range;
+- (NSMutableAttributedString *)vd_setFont:(UIFont *)font color:(UIColor *)color range:(NSRange)range;
+
+/**
+ 改变指定字符串的颜色和字体
+
+ @param font 字体
+ @param color 颜色
+ @param text 字符串
+ @param index 位置 -1 所有 0... 其它
+ @return 富文本
+ */
+- (NSMutableAttributedString *)vd_setFont:(UIFont *)font color:(UIColor *)color text:(NSString *)text index:(NSInteger)index;
 
 @end

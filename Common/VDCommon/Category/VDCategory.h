@@ -18,6 +18,7 @@
 #import "UIView+VDInitialize.h"
 #import "UIView+VDGesture.h"
 #import "UIControl+VDEvent.h"
+#import "UITextField+VDCommon.h"
 
 #import "UIColor+VDHexColor.h"
 #import "UIColor+VDCommon.h"

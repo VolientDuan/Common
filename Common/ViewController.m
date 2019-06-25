@@ -54,10 +54,12 @@
     
     UITextField *textField = [UITextField vd_textFieldWithFrame:CGRectMake(button.v_right+20, button.v_top, 100, 100) textColor:UIColor.whiteColor font:[UIFont systemFontOfSize:15] placeholder:@"please input"];
     textField.backgroundColor = UIColor.brownColor;
+    textField.vd_placeholderFont = [UIFont systemFontOfSize:20];
+    textField.vd_placeholderColor = UIColor.redColor;
     [self.view addSubview:textField];
-    textField.vd_valueChanged(^(UITextField *textFd){
+    textField.vd_textChanged(^(NSString *str){
         
-        NSLog(@"textField value changed: %@",textFd.text);
+        NSLog(@"textField value changed: %@",str);
     }).vd_event(UIControlEventEditingDidEndOnExit, ^(UITextField *textFd){
         
         [textFd resignFirstResponder];
@@ -68,6 +70,15 @@
     textAnimView.backgroundColor = UIColor.cyanColor;
     [self.view addSubview:textAnimView];
     [VDAnimation setAnimationWithText:@"V D" fontName:@"Avenir-BlackOblique" fontSize:40.0 fillColor:UIColor.whiteColor strokeColor:UIColor.redColor lineWidth:1.0 duration:2.5 toView:textAnimView];
+    
+    NSString *str = @"123QW567QW9QW";
+    UILabel *label = [UILabel vd_labelWithFrame:CGRectMake(20, textAnimView.v_bottom + 20, 100, 100) title:@"" color:UIColor.blackColor font:[UIFont systemFontOfSize:15]];
+    label.textAlignment = NSTextAlignmentCenter;
+    label.numberOfLines = 0;
+    [self.view addSubview:label];
+    NSMutableAttributedString *attStr = [[NSMutableAttributedString alloc]initWithString:str];
+    label.attributedText = [attStr vd_setFont:nil color:UIColor.redColor text:@"QW" index:1];
+    
 }
 
 - (void)jumpToolTest {

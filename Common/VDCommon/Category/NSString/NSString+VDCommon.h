@@ -71,5 +71,6 @@
 // 是否带有表情府
 - (BOOL)vd_isContainsEmoji;
 
+- (NSArray *)vd_rangsWithSubString:(NSString *)subString;
 
 @end

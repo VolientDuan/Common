@@ -339,4 +339,19 @@
     return returnValue;
 }
 
+- (NSArray *)vd_rangsWithSubString:(NSString *)subString {
+    int location = 0;
+    NSMutableArray *locationArr = [NSMutableArray new];
+    NSRange range = [self rangeOfString:subString];
+    //声明一个临时字符串,记录截取之后的字符串
+    NSString * subStr = self;
+    while (range.location != NSNotFound) {
+        [locationArr addObject:NSStringFromRange(NSMakeRange(range.location+location, range.length))];
+        subStr = [subStr substringFromIndex:range.location+range.length];
+        location += range.location + subString.length;
+        range = [subStr rangeOfString:subString];
+    }
+    return [locationArr copy];
+}
+
 @end

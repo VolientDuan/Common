@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		07BCD31322C1CCAE00DB3F7D /* UITextField+VDCommon.m in Sources */ = {isa = PBXBuildFile; fileRef = 07BCD31222C1CCAE00DB3F7D /* UITextField+VDCommon.m */; };
 		5A5EAB8021C0A9D40010DE1E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A5EAB7F21C0A9D40010DE1E /* AppDelegate.m */; };
 		5A5EAB8321C0A9D40010DE1E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A5EAB8221C0A9D40010DE1E /* ViewController.m */; };
 		5A5EAB8621C0A9D40010DE1E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A5EAB8421C0A9D40010DE1E /* Main.storyboard */; };
@@ -53,6 +54,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		07BCD31122C1CCAE00DB3F7D /* UITextField+VDCommon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UITextField+VDCommon.h"; sourceTree = "<group>"; };
+		07BCD31222C1CCAE00DB3F7D /* UITextField+VDCommon.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UITextField+VDCommon.m"; sourceTree = "<group>"; };
 		5A5EAB7B21C0A9D40010DE1E /* Common.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Common.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A5EAB7E21C0A9D40010DE1E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		5A5EAB7F21C0A9D40010DE1E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -217,6 +220,8 @@
 				5A5EABE121C204E60010DE1E /* UIView+VDGesture.m */,
 				5ACFD79F21C23CE00093F4D5 /* UIControl+VDEvent.h */,
 				5ACFD7A021C23CE00093F4D5 /* UIControl+VDEvent.m */,
+				07BCD31122C1CCAE00DB3F7D /* UITextField+VDCommon.h */,
+				07BCD31222C1CCAE00DB3F7D /* UITextField+VDCommon.m */,
 			);
 			path = UIView;
 			sourceTree = "<group>";
@@ -473,6 +478,7 @@
 				5A5EABE221C204E60010DE1E /* UIView+VDGesture.m in Sources */,
 				5A5EABCF21C0E1EC0010DE1E /* VDQRCodeTool.m in Sources */,
 				5A5EABCB21C0DE4F0010DE1E /* UIColor+VDCommon.m in Sources */,
+				07BCD31322C1CCAE00DB3F7D /* UITextField+VDCommon.m in Sources */,
 				5A5EABB421C0ABC50010DE1E /* UIView+VDCommon.m in Sources */,
 				5A5EABD821C0EC510010DE1E /* VDJumpTool.m in Sources */,
 				5ADAA6CC21C79EA800335377 /* VDDeviceTool.m in Sources */,

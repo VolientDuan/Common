@@ -23,4 +23,35 @@
     return self;
 }
 
+- (NSMutableAttributedString *)vd_setFont:(UIFont *)font color:(UIColor *)color range:(NSRange)range {
+    if (font) {
+        [self vd_setFont:font range:range];
+    }
+    if (color) {
+        [self vd_setColor:color range:range];
+    }
+    return self;
+}
+
+- (NSMutableAttributedString *)vd_setFont:(UIFont *)font color:(UIColor *)color text:(NSString *)text index:(NSInteger)index {
+    
+    if (index < 0) {
+        NSArray *rangs = [self.string vd_rangsWithSubString:text];
+        for (NSString *rangStr in rangs) {
+            [self vd_setFont:font color:color range:NSRangeFromString(rangStr)];
+        }
+    } else if (index == 0) {
+        NSRange range = [self.string rangeOfString:text];
+        if (range.location != NSNotFound) {
+            [self vd_setFont:font color:color range:range];
+        }
+    } else {
+        NSArray *rangs = [self.string vd_rangsWithSubString:text];
+        if (rangs.count > index) {
+            [self vd_setFont:font color:color range:NSRangeFromString(rangs[index])];
+        }
+    }
+    return self;
+}
+
 @end
