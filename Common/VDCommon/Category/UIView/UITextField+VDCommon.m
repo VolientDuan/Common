@@ -7,6 +7,7 @@
 //
 
 #import "UITextField+VDCommon.h"
+#import "UIControl+VDEvent.h"
 
 @implementation UITextField (VDCommon)
 

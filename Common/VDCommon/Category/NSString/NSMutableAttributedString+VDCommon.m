@@ -7,6 +7,7 @@
 //
 
 #import "NSMutableAttributedString+VDCommon.h"
+#import "NSString+VDCommon.h"
 
 @implementation NSMutableAttributedString (VDCommon)
 
