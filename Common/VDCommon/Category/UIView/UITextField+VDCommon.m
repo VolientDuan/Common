@@ -29,22 +29,22 @@
     [self setValue:vd_placeholderFont forKeyPath:@"_placeholderLabel.font"];
 }
 
-//- (VDTextFieldBlock)vd_textChanged {
-//    return ^(VDTextValueCallBack callback){
-//        self.vd_valueChanged(^(id sender){
-//            NSString *lang = [[UIApplication sharedApplication]textInputMode].primaryLanguage; // 键盘输入模
-//            if ([lang isEqualToString:@"zh-Hans"]) { // 简体中文输入，包括简体拼音，健体五笔，简体手写
-//                UITextRange *selectedRange = [self markedTextRange];
-//                if (!selectedRange) {
-//                    callback(self.text);
-//                }
-//            } else {
-//                callback(self.text);
-//            }
-//        });
-//        return self;
-//    };
-//}
+- (VDTextFieldBlock)vd_textChanged {
+    return ^(VDTextValueCallBack callback){
+        self.vd_valueChanged(^(id sender){
+            NSString *lang = [[UIApplication sharedApplication]textInputMode].primaryLanguage; // 键盘输入模
+            if ([lang isEqualToString:@"zh-Hans"]) { // 简体中文输入，包括简体拼音，健体五笔，简体手写
+                UITextRange *selectedRange = [self markedTextRange];
+                if (!selectedRange) {
+                    callback(self.text);
+                }
+            } else {
+                callback(self.text);
+            }
+        });
+        return self;
+    };
+}
 
 
 

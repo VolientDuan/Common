@@ -7,14 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
-//typedef void(^VDTextValueCallBack)(NSString *value);
-//typedef UITextField * (^VDTextFieldBlock)(VDTextValueCallBack callback);
+typedef void(^VDTextValueCallBack)(NSString *value);
+typedef UITextField * (^VDTextFieldBlock)(VDTextValueCallBack callback);
 
 @interface UITextField (VDCommon)
 
 @property (nonatomic, strong)UIColor *vd_placeholderColor;
 @property (nonatomic, strong)UIFont *vd_placeholderFont;
-// 监听textField文本输入 自动忽略中文输入高亮文字
-//- (VDTextFieldBlock)vd_textChanged;
+ // 监听textField文本输入 自动忽略中文输入高亮文字
+- (VDTextFieldBlock)vd_textChanged;
 
 @end
