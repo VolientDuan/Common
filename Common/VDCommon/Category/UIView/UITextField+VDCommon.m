@@ -26,8 +26,8 @@
     [self setValue:vd_placeholderFont forKeyPath:@"_placeholderLabel.font"];
 }
 
-- (UITextField *(^)(VDControlEventCallBack))vd_textChanged {
-    return ^(VDControlEventCallBack callback){
+- (UITextField *(^)(VDTextValueCallBack))vd_textChanged {
+    return ^(VDTextValueCallBack callback){
         self.vd_valueChanged(^(UITextField *textField){
             NSString *lang = [[UIApplication sharedApplication]textInputMode].primaryLanguage; // 键盘输入模
             if ([lang isEqualToString:@"zh-Hans"]) { // 简体中文输入，包括简体拼音，健体五笔，简体手写
