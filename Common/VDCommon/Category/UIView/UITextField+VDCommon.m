@@ -7,6 +7,8 @@
 //
 
 #import "UITextField+VDCommon.h"
+#import <objc/runtime.h>
+
 #import "UIControl+VDEvent.h"
 
 @implementation UITextField (VDCommon)
@@ -29,7 +31,7 @@
 
 - (VDTextFieldBlock)vd_textChanged {
     return ^(VDTextValueCallBack callback){
-        self.vd_valueChanged(^(UITextField *textField){
+        self.vd_valueChanged(^(id sender){
             NSString *lang = [[UIApplication sharedApplication]textInputMode].primaryLanguage; // 键盘输入模
             if ([lang isEqualToString:@"zh-Hans"]) { // 简体中文输入，包括简体拼音，健体五笔，简体手写
                 UITextRange *selectedRange = [self markedTextRange];
