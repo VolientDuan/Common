@@ -27,7 +27,7 @@
     [self setValue:vd_placeholderFont forKeyPath:@"_placeholderLabel.font"];
 }
 
-- (UITextField *(^)(VDTextValueCallBack))vd_textChanged {
+- (VDTextFieldBlock)vd_textChanged {
     return ^(VDTextValueCallBack callback){
         self.vd_valueChanged(^(UITextField *textField){
             NSString *lang = [[UIApplication sharedApplication]textInputMode].primaryLanguage; // 键盘输入模
