@@ -78,7 +78,39 @@
     [self.view addSubview:label];
     NSMutableAttributedString *attStr = [[NSMutableAttributedString alloc]initWithString:str];
     label.attributedText = [attStr vd_setFont:nil color:UIColor.redColor text:@"QW" index:1];
+    [self addGradientLayerWithColors:@[UIColor.grayColor, UIColor.orangeColor]];
     
+    [self maskTest];
+}
+
+- (void)addGradientLayerWithColors:(NSArray *)colors {
+    UILabel* testLabel = [[UILabel alloc] initWithFrame:CGRectMake(20, 600, 300, 20)];
+    testLabel.text = @"我是渐变色";
+    testLabel.font = [UIFont systemFontOfSize:23];
+    [self.view addSubview:testLabel];
+    testLabel.v_textColors = colors;
+    testLabel.userInteractionEnabled = YES;
+    testLabel.vd_singleTap(^(UITapGestureRecognizer *tap){
+        testLabel.font = [UIFont systemFontOfSize:9];
+        testLabel.frame = CGRectMake(20, 600, 300, 10);
+        testLabel.textColor = UIColor.blackColor;
+    });
+}
+
+- (void)maskTest {
+    UIView *testView = [[UIView alloc]initWithFrame:CGRectMake(200, 600, 100, 100)];
+    UILabel *maskView = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, 100, 100)];
+    maskView.text = @"心好累";
+    maskView.textAlignment = NSTextAlignmentCenter;
+    maskView.layer.borderWidth = 1;
+    maskView.layer.borderColor = UIColor.blackColor.CGColor;
+    maskView.v_cornerRadius = 50;
+    [testView addSubview:maskView];
+    
+    CAGradientLayer *colorLayer = [testView v_getColorsLayer:@[UIColor.orangeColor, UIColor.grayColor] frame:CGRectMake(0, 0, 100, 100) isHorizontal:NO];
+    colorLayer.mask = maskView.layer;
+    [testView.layer insertSublayer:colorLayer atIndex:0];
+    [self.view addSubview:testView];
 }
 
 - (void)jumpToolTest {

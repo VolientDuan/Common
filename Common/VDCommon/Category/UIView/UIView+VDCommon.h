@@ -72,6 +72,7 @@
 
 /**
  获取渐变layer：注意frame问题
+ ps: 通过设置此渐变图层的mask可以实现多重形状的渐变图形：文字，边框，多边形等；是通过裁剪mask图层的透明部分保留不透明部分而实现不同的渐变效果
  
  @param colors 颜色组合 →
  @param frame 颜色覆盖位置
@@ -90,6 +91,14 @@
  如果需要清除渐变背景色，设置nil即可
  */
 @property (nonatomic, copy)NSArray<UIColor *> *v_backgroundColors;
+
+/**
+ 字体颜色渐变 针对label
+ 如果需要清除渐变背景色，设置nil即可
+ */
+@property (nonatomic, copy)NSArray<UIColor *> *v_textColors;
+
+
 
 @end
 
