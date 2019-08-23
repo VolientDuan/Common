@@ -81,6 +81,7 @@
     [self addGradientLayerWithColors:@[UIColor.grayColor, UIColor.orangeColor]];
     
     [self maskTest];
+    [self lineTest];
 }
 
 - (void)addGradientLayerWithColors:(NSArray *)colors {
@@ -111,6 +112,37 @@
     colorLayer.mask = maskView.layer;
     [testView.layer insertSublayer:colorLayer atIndex:0];
     [self.view addSubview:testView];
+}
+
+- (void)lineTest {
+    UIView *testView = [[UIView alloc]initWithFrame:CGRectMake(200, 500, 100, 100)];
+    [self.view addSubview:testView];
+    //create path
+    UIBezierPath *path = [[UIBezierPath alloc]init];
+    [path moveToPoint:CGPointMake(50, 50)];
+    [path addLineToPoint:CGPointMake(50, 100)];
+    //create shape layer
+    CAShapeLayer *shapeLayer = [CAShapeLayer layer];
+    shapeLayer.strokeColor = [UIColor grayColor].CGColor;
+    shapeLayer.fillColor = [UIColor clearColor].CGColor;
+    shapeLayer.lineWidth = 1;
+    shapeLayer.lineJoin = kCALineJoinRound;
+    shapeLayer.lineCap = kCALineCapRound;
+    shapeLayer.path = path.CGPath;
+    shapeLayer.lineDashPattern = @[@4, @4];//画虚线
+    //add it to our view
+    [testView.layer addSublayer:shapeLayer];
+    
+    UIView *point = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 12, 12)];
+    point.v_cornerRadius = 6;
+    point.backgroundColor = UIColor.lightGrayColor;
+    point.center = CGPointMake(50, 50);
+    UIView *innerPoint = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 8, 8)];
+    innerPoint.v_cornerRadius = 4;
+    innerPoint.backgroundColor = UIColor.blackColor;
+    innerPoint.center = CGPointMake(6, 6);
+    [point addSubview:innerPoint];
+    [testView addSubview:point];
 }
 
 - (void)jumpToolTest {
