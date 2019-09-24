@@ -10,23 +10,45 @@
 #import <objc/runtime.h>
 
 #import "UIControl+VDEvent.h"
+static char *VDPlaceholderColorKey = "vd_placeholderColor_key";
+static char *VDPlaceholderFontKey = "vd_placeholderFont_key";
+static char *VDPlaceholderKey = "vd_placeholder_key";
 
 @implementation UITextField (VDCommon)
 
+- (NSString *)vd_placeholder {
+    NSString *str = objc_getAssociatedObject(self, VDPlaceholderKey);
+    if (!str) {
+        str = self.placeholder;
+    }
+    return str?:@"";
+}
+
+- (void)setVd_placeholder:(NSString *)vd_placeholder {
+    objc_setAssociatedObject(self, VDPlaceholderKey, vd_placeholder, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
+
 - (UIColor *)vd_placeholderColor {
-    return [self valueForKeyPath:@"_placeholderLabel.textColor"];
+    UIColor *color = objc_getAssociatedObject(self, VDPlaceholderColorKey);
+    return color?:UIColor.lightGrayColor;
 }
 
 - (void)setVd_placeholderColor:(UIColor *)vd_placeholderColor {
-    [self setValue:vd_placeholderColor forKeyPath:@"_placeholderLabel.textColor"];
+    objc_setAssociatedObject(self, VDPlaceholderColorKey, vd_placeholderColor, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    NSAttributedString *attrStr = [[NSAttributedString alloc]initWithString:self.vd_placeholder attributes:@{NSForegroundColorAttributeName:vd_placeholderColor, NSFontAttributeName:self.vd_placeholderFont}];
+    self.attributedPlaceholder = attrStr;
 }
 
 - (UIFont *)vd_placeholderFont {
-    return [self valueForKeyPath:@"_placeholderLabel.font"];
+    UIFont *font = objc_getAssociatedObject(self, VDPlaceholderFontKey);
+    return font?:self.font;
 }
 
 - (void)setVd_placeholderFont:(UIFont *)vd_placeholderFont {
-    [self setValue:vd_placeholderFont forKeyPath:@"_placeholderLabel.font"];
+    objc_setAssociatedObject(self, VDPlaceholderFontKey, vd_placeholderFont, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    NSAttributedString *attrStr = [[NSAttributedString alloc]initWithString:self.vd_placeholder attributes:@{NSForegroundColorAttributeName:self.vd_placeholderColor, NSFontAttributeName:vd_placeholderFont}];
+    self.attributedPlaceholder = attrStr;
+    
 }
 
 - (VDTextFieldBlock)vd_textChanged {

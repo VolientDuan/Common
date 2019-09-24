@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		07176AAE2339B1450010A319 /* VDRectangleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 07176AAD2339B1450010A319 /* VDRectangleView.m */; };
 		07BCD31322C1CCAE00DB3F7D /* UITextField+VDCommon.m in Sources */ = {isa = PBXBuildFile; fileRef = 07BCD31222C1CCAE00DB3F7D /* UITextField+VDCommon.m */; };
 		5A5EAB8021C0A9D40010DE1E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A5EAB7F21C0A9D40010DE1E /* AppDelegate.m */; };
 		5A5EAB8321C0A9D40010DE1E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A5EAB8221C0A9D40010DE1E /* ViewController.m */; };
@@ -54,6 +55,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		07176AAC2339B1450010A319 /* VDRectangleView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VDRectangleView.h; sourceTree = "<group>"; };
+		07176AAD2339B1450010A319 /* VDRectangleView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VDRectangleView.m; sourceTree = "<group>"; };
 		07BCD31122C1CCAE00DB3F7D /* UITextField+VDCommon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UITextField+VDCommon.h"; sourceTree = "<group>"; };
 		07BCD31222C1CCAE00DB3F7D /* UITextField+VDCommon.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UITextField+VDCommon.m"; sourceTree = "<group>"; };
 		5A5EAB7B21C0A9D40010DE1E /* Common.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Common.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -139,6 +142,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		07176AAB2339B1050010A319 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				07176AAC2339B1450010A319 /* VDRectangleView.h */,
+				07176AAD2339B1450010A319 /* VDRectangleView.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		5A5EAB7221C0A9D40010DE1E = {
 			isa = PBXGroup;
 			children = (
@@ -162,6 +174,7 @@
 		5A5EAB7D21C0A9D40010DE1E /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				07176AAB2339B1050010A319 /* View */,
 				5A94F19021CB9685003F92F4 /* Source */,
 				5A94F18F21CA4E11003F92F4 /* Classes */,
 				5A5EABC721C0DC8E0010DE1E /* VDCommon */,
@@ -482,6 +495,7 @@
 				5A5EABB421C0ABC50010DE1E /* UIView+VDCommon.m in Sources */,
 				5A5EABD821C0EC510010DE1E /* VDJumpTool.m in Sources */,
 				5ADAA6CC21C79EA800335377 /* VDDeviceTool.m in Sources */,
+				07176AAE2339B1450010A319 /* VDRectangleView.m in Sources */,
 				5ADAA6C721C7466C00335377 /* VDNotiHelper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

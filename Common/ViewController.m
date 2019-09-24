@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "VDRectangleView.h"
 
 @interface ViewController ()
 
@@ -82,6 +83,7 @@
     
     [self maskTest];
     [self lineTest];
+//    [self createVDRectangleView];
 }
 
 - (void)addGradientLayerWithColors:(NSArray *)colors {
@@ -150,5 +152,11 @@
         
         NSLog(@"back finished");
     }}];
+}
+
+- (void)createVDRectangleView {
+    VDRectangleView *v = [[VDRectangleView alloc]initWithFrame:CGRectMake(100, 100, 200, 200)];
+    v.backgroundColor = UIColor.grayColor;
+    [self.view addSubview:v];
 }
 @end

@@ -67,4 +67,12 @@
     return [self formatTimeInterval:([self getNowTimeInterval]-24*60*60) format:format];
 }
 
++ (NSString *)formatDateStr:(NSString *)dateStr from:(NSString *)from to:(NSString *)to {
+    NSDate *date = [VDDateFormatTool dateFromStr:dateStr format:from];
+    NSDateFormatter *formatter = [[NSDateFormatter alloc]init];
+    [formatter setDateFormat:to];
+    return [formatter stringFromDate:date];
+    
+}
+
 @end

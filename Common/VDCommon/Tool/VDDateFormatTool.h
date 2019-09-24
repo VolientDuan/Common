@@ -45,4 +45,6 @@
 
 + (NSInteger)getSecCountdownFrom:(NSTimeInterval)from to:(NSTimeInterval)to;
 
++ (NSString *)formatDateStr:(NSString *)dateStr from:(NSString *)from to:(NSString *)to;
+
 @end

@@ -14,6 +14,7 @@ typedef UITextField * (^VDTextFieldBlock)(VDTextValueCallBack callback);
 
 @property (nonatomic, strong)UIColor *vd_placeholderColor;
 @property (nonatomic, strong)UIFont *vd_placeholderFont;
+@property (nonatomic, copy)NSString *vd_placeholder;
  // 监听textField文本输入 自动忽略中文输入高亮文字
 - (VDTextFieldBlock)vd_textChanged;
 
