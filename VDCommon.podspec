@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
     s.name         = 'VDCommon'
-    s.version      = '1.0.9'
+    s.version      = '1.1.0'
     s.summary      = 'a common component'
     s.homepage     = 'https://github.com/VolientDuan/Common'
     s.license      = 'MIT'
