@@ -26,6 +26,9 @@ static char *VDPlaceholderKey = "vd_placeholder_key";
 
 - (void)setVd_placeholder:(NSString *)vd_placeholder {
     objc_setAssociatedObject(self, VDPlaceholderKey, vd_placeholder, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    NSAttributedString *attrStr = [[NSAttributedString alloc]initWithString:vd_placeholder attributes:@{NSForegroundColorAttributeName:self.vd_placeholderColor
+                                                                                                        , NSFontAttributeName:self.vd_placeholderFont}];
+    self.attributedPlaceholder = attrStr;
 }
 
 - (UIColor *)vd_placeholderColor {
